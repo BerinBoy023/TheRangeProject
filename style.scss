@@ -1,0 +1,116 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+//COLORS
+$light-grey: rgb(194, 194, 194);
+$orange-color: #fa4616;
+//CONTAINER THAT WRAPS THE WEBSITE
+#container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  #office-text {
+    align-self: flex-start;
+  }
+  //CONTAINER WRAPPING SORT BUTTONS
+  .buttons-container {
+    width: 100%;
+    display: flex;
+    button {
+      flex: 1 0 21%;
+      margin: 10px;
+      background-color: transparent;
+      border: 1px solid $light-grey;
+      text-transform: capitalize;
+      padding: 5px 10px;
+    }
+  }
+  //CONTAINER WRAPPING PRODUCTS
+  #product-container {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    list-style-type: none;
+    //INDIVIDUAL PRODUCT
+    .product-card {
+      border: 1px solid black;
+      height: 350px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-content: center;
+      align-items: center;
+      text-align: center;
+      flex: 1 0 21%;
+      margin: 10px;
+      p {
+        flex: 1;
+        font-size: 15px;
+      }
+      .invisible {
+        //this is important for empty space inside products
+        visibility: hidden;
+      }
+      .product-name {
+        flex: 1;
+        font-size: 20px;
+      }
+      .was-price {
+        color: red;
+        span {
+          text-decoration: line-through;
+        }
+      }
+      .product-reviews {
+        color: rgb(15, 214, 15);
+      }
+      .product-button {
+        padding: 15px 20px;
+        border-color: white;
+        color: white;
+        border: 1px solid;
+        outline: white;
+        background-color: $orange-color;
+        font-size: 13px;
+        line-height: 13px;
+        margin-top: 5px;
+        margin-bottom: 10px;
+        width: 80%;
+        text-align: center;
+        cursor: pointer;
+      }
+    }
+    img {
+      flex: 1;
+      width: 150px;
+    }
+  }
+}
+
+// RESPONSIVE FOR TABLETS
+@media screen and (max-width: 800px) {
+  #container {
+    #product-container {
+      .product-card {
+        flex: 1 0 30%;
+      }
+    }
+  }
+}
+// RESPONSIVE FOR PHONES
+@media screen and (max-width: 600px) {
+  #container {
+    .buttons-container {
+      flex-flow: row wrap;
+      button {
+        flex: 1 0 30%;
+      }
+    }
+  }
+}
